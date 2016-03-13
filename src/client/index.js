@@ -1,33 +1,19 @@
-import 'babel-core/polyfill';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Router, browserHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
+import { Provider } from 'react-redux'
+import configureStore from '../common/store'
+import routes from '../common/routes'
 
-import React from 'react';
-import { Router } from 'react-router';
-import { Provider } from 'react-redux';
-import { ReduxRouter } from 'redux-router';
+const initialState = window.__INITIAL_STATE__
+const store = configureStore(initialState)
+const history = syncHistoryWithStore(browserHistory, store)
 
-import createBrowserHistory from 'history/lib/createBrowserHistory'
-
-import configureStore from '../common/store/configureStore';
-import routes from '../common/routes';
-
-import "../../styles/index.css";
-
-const history = createBrowserHistory();
-const initialState = window.__INITIAL_STATE__;
-const store = configureStore(initialState);
-const rootElement = document.getElementById('root');
-
-React.render(
-  <Provider store={store}>
-    {() =>
-        <ReduxRouter>
-          <Router children={routes} history={history} />
-        </ReduxRouter>
-    }
-  </Provider>,
-  document.getElementById('root')
-);
-
-if (process.env.NODE_ENV !== 'production') {
-  require('../server/devtools')(store);
-}
+ReactDOM.render(
+    <Provider store={store}>
+        <Router children={routes}
+                history={history}/>
+    </Provider>,
+    document.getElementById('root')
+)

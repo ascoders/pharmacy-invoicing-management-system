@@ -1,25 +1,17 @@
-import { Route } from "react-router";
-import React from "react";
-
-import App from "./containers/App";
-
-//Redux Smart
-import CounterPage from "./containers/CounterPage";
-import RedditPage from "./containers/RedditPage";
-import TodoPage from "./containers/TodoPage";
-
-//Redux Dumb
-import HomePage from "./components/Home";
-import AboutPage from "./components/About";
-import error404 from "./components/404";
+import { Route, IndexRoute } from 'react-router'
+import React from 'react'
+import Layout from './layout'
+import Home from './routes/home'
+import Counter from './routes/counter'
+import NotFound from './routes/not-found'
 
 export default (
-  <Route name="app" path="/" component={App}>
-      <Route path="home" component={HomePage} />
-      <Route path="reddit" component={RedditPage} />
-      <Route path="todo" component={TodoPage} />
-      <Route path="counter" component={CounterPage} />
-      <Route path="about" component={AboutPage} />
-      <Route path="*" component={error404}/>
-  </Route>
-);
+    <Route path="/"
+           component={Layout}>
+        <IndexRoute component={Home}/>
+        <Route path="/counter"
+               component={Counter}/>
+        <Route path="*"
+               component={NotFound}/>
+    </Route>
+)
