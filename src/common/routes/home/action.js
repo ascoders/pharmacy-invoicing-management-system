@@ -5,29 +5,28 @@ export const POSTS_GET_REQUEST = 'POSTS_GET_REQUEST'
 export const POSTS_GET_SUCCESS = 'POSTS_GET_SUCCESS'
 export const POSTS_GET_FAILURE = 'POSTS_GET_FAILURE'
 
-const shouldFetchPosts = (state, reddit) => {
-    const posts = state.postsByReddit[reddit];
+const shouldFetchLists = (state) => {
+    const posts = null
     if (!posts) {
         return true
     } else if (posts.isFetching) {
         return false
     } else {
-        return posts.didInvalidate;
+        return posts.didInvalidate
     }
 }
 
-export const fetchPosts = (reddit = 'reactjs') => {
+export const fetchLists = () => {
     return {
         type: POSTS_GET,
-        reddit: reddit,
-        promise: request.get(`http://www.reddit.com/r/${reddit}.json`)
+        promise: request.get(`http://www.reddit.com/r/reactjs.json`)
     }
 }
 
-export const fetchPostsIfNeeded = (reddit) => {
+export const fetchListsIfNeeded = () => {
     return (dispatch, getState) => {
-        if (shouldFetchPosts(getState(), reddit)) {
-            return dispatch(fetchPosts(reddit))
+        if (shouldFetchLists(getState())) {
+            return dispatch(fetchLists())
         }
     }
 }

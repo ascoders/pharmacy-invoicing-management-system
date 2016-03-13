@@ -8,26 +8,13 @@ import { Link } from 'react-router'
 
 @connect(
     state => {
-        let { selectedReddit, postsByReddit } = state
-        selectedReddit = selectedReddit.present
-        postsByReddit = postsByReddit.present
-        const {
-            isFetching,
-            lastUpdated,
-            error,
-            items: posts
-            } = postsByReddit[selectedReddit] || {
-            isFetching: true,
-            error: {},
-            items: []
-        }
+        let { home } = state
 
         return {
-            selectedReddit,
-            posts,
-            isFetching,
-            lastUpdated,
-            error
+            lists: home.present.lists || [],
+            isFetching: true,
+            lastUpdated: null,
+            error: {}
         }
     },
     dispatch => ({
@@ -41,14 +28,13 @@ class Home extends Component {
     }
 
     componentWillMount() {
-        const { selectedReddit } = this.props
-        this.props.fetchPostsIfNeeded(selectedReddit)
+        this.props.fetchListsIfNeeded()
     }
 
     render() {
-        const { posts } = this.props
+        const { lists } = this.props
 
-        const Posts = posts.map((item, index) => {
+        const Lists = lists.map((item, index) => {
             return (
                 <div key={index}>{item.author}</div>
             )
@@ -56,7 +42,7 @@ class Home extends Component {
 
         return (
             <div>
-                {Posts}
+                {Lists}
                 <Link to="/counter">counter</Link>
             </div>
         )
@@ -64,7 +50,7 @@ class Home extends Component {
 }
 
 Home.need = [
-    actions.fetchPosts
+    actions.fetchLists
 ]
 
 export default Home
