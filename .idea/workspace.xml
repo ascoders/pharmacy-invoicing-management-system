@@ -2,79 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba75ca9d-e57a-4ec7-807d-c43e0b230dfc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.babelrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/isomorphic_redux_app_node_modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/layout/action.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/layout/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/layout/reducer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/promiseMiddleware.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/reducer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/routes/counter/action.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/routes/counter/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/routes/counter/reducer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/routes/home/action.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/routes/home/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/routes/home/reducer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/routes/not-found/action.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/routes/not-found/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/routes/not-found/reducer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/store.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/actions/counter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/actions/layout.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/actions/reddit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/actions/todos.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/actions/user.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/api/promiseMiddleware.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/api/user.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/components/404.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/components/About.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/components/Counter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/components/Home.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/components/Reddit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/components/Todo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/components/layout/Header.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/components/layout/Sidebar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/components/reddit/Picker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/components/reddit/Posts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/components/todo/Footer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/components/todo/Header.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/components/todo/Item.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/components/todo/Section.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/components/todo/TextInput.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/components/todo/Todo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/containers/App.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/containers/CounterPage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/containers/RedditPage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/containers/TodoPage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/reducers/counter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/reducers/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/reducers/layout.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/reducers/reddit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/reducers/todos.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/reducers/user.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/reducers/version.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/store/configureStore.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/devtools.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/styles/base.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/styles/custom.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/styles/index.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/styles/layout.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/styles/todo.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/behaviour/Sidebar.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/render/Sidebar.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/state/layout.spec.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/common/api/fetchComponentDataBeforeRender.js" afterPath="$PROJECT_DIR$/src/server/fetchComponentDataBeforeRender.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/index.js" afterPath="$PROJECT_DIR$/src/client/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/routes.js" afterPath="$PROJECT_DIR$/src/common/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/index.js" afterPath="$PROJECT_DIR$/src/server/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/server.js" afterPath="$PROJECT_DIR$/src/server/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/webpack.js" afterPath="$PROJECT_DIR$/src/server/webpack.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/setup.js" afterPath="$PROJECT_DIR$/test/setup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <ignored path="isomorphic-redux-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -115,12 +44,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14180207">
+            <state vertical-scroll-proportion="-2.5714285">
               <caret line="3" column="101" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="101" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor vertical-scroll-proportion="0.52811736">
+                <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -167,7 +112,6 @@
         <option value="$PROJECT_DIR$/src/common/components/404.js" />
         <option value="$PROJECT_DIR$/src/server/devtools.js" />
         <option value="$PROJECT_DIR$/src/common/components/layout/Header.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/server/index.js" />
         <option value="$PROJECT_DIR$/src/server/webpack.js" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
@@ -202,6 +146,7 @@
         <option value="$PROJECT_DIR$/test/setup.js" />
         <option value="$PROJECT_DIR$/src/common/routes/home/action.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -514,7 +459,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32831737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -602,19 +547,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -841,9 +773,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14180207">
+        <state vertical-scroll-proportion="-2.5714285">
           <caret line="3" column="101" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="101" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="0.52811736">
+            <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
