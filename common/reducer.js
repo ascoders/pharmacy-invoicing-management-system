@@ -13,7 +13,7 @@ import counter from './routes/counter/reducer'
 const rootReducer = combineReducers({
     layout: layout,
     notFound: notFound,
-    home: reduxUndo(home),
+    home: home,
     counter: reduxUndo(counter),
     routing: routerReducer
 })

@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'production') {
     webpackConfig = merge(webpackConfig, {
         devtool: "source-map",
         entry: [
-            './src/client/index.js'
+            './client/index.js'
         ],
         module: {
             loaders: [{
@@ -80,7 +80,7 @@ if (process.env.NODE_ENV === 'production') {
         },
         entry: [
             'webpack-hot-middleware/client',
-            './src/client/index.js'
+            './client/index.js'
         ],
         plugins: [
             new webpack.HotModuleReplacementPlugin()

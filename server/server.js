@@ -1,7 +1,7 @@
 import express from 'express'
 
 import webpack from 'webpack'
-import webpackConfig from '../../webpack.config'
+import webpackConfig from '../webpack.config'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 
@@ -45,6 +45,20 @@ if (process.env.NODE_ENV !== 'production') {
 } else {
     app.use('/static', express.static(__dirname + '/../../dist'))
 }
+
+app.get('/api/author', function (req, res) {
+    res.send([{
+        author: 1
+    }, {
+        author: 2
+    }, {
+        author: 3
+    }, {
+        author: 4
+    }, {
+        author: 5
+    }])
+})
 
 app.get('/*', function (req, res) {
     const location = createLocation(req.url)

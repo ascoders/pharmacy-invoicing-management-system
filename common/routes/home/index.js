@@ -11,7 +11,7 @@ import { Link } from 'react-router'
         let { home } = state
 
         return {
-            lists: home.present.lists || [],
+            lists: home.lists || [],
             isFetching: true,
             lastUpdated: null,
             error: {}

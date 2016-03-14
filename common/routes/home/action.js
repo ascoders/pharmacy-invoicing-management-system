@@ -5,21 +5,30 @@ export const POSTS_GET_REQUEST = 'POSTS_GET_REQUEST'
 export const POSTS_GET_SUCCESS = 'POSTS_GET_SUCCESS'
 export const POSTS_GET_FAILURE = 'POSTS_GET_FAILURE'
 
+const isomorphicRequestUrl = (url)=> {
+    if (process.browser) {
+        return url
+    } else {
+        return `http://127.0.0.1:8080${url}`
+    }
+}
+
 const shouldFetchLists = (state) => {
-    const posts = null
-    if (!posts) {
+    const home = state.home
+    if (!home.lists) {
         return true
-    } else if (posts.isFetching) {
+    } else if (home.isFetching) {
         return false
     } else {
-        return posts.didInvalidate
+        return true
     }
 }
 
 export const fetchLists = () => {
+    const url = isomorphicRequestUrl('/api/author')
     return {
         type: POSTS_GET,
-        promise: request.get(`http://www.reddit.com/r/reactjs.json`)
+        promise: request.get(url)
     }
 }
 
