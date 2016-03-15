@@ -16,7 +16,7 @@ import { fetchComponentDataBeforeRender } from './fetchComponentDataBeforeRender
 import configureStore from '../common/store'
 import routes from '../common/routes'
 
-const app = express();
+const app = express()
 const renderFullPage = (html, initialState) => {
     return `
     <!doctype html>
@@ -65,7 +65,6 @@ app.get('/*', function (req, res) {
     const location = createLocation(req.url)
 
     match({routes, location}, (err, redirectLocation, renderProps) => {
-
             if (err) {
                 console.error(err)
                 return res.status(500).end('Internal server error')

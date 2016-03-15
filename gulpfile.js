@@ -7,13 +7,6 @@ var ignoreSuffix = `
 require.extensions['.css'] = function (module, filename){}
 `
 
-gulp.task('aaaa', function (cb) {
-    return nodemon({
-        script: './dist/server/index.js',
-        env: {'NODE_ENV': 'development'}
-    })
-})
-
 gulp.task('client', function () {
     return gulp.src('./client/**/*.js')
         .pipe(babel())
@@ -45,4 +38,13 @@ gulp.task('webpack-config', function () {
         .pipe(gulp.dest('dist'))
 })
 
-gulp.task('default', ['client', 'common', 'server', 'server-entry', 'webpack-config'])
+gulp.task('nodemon', ['server-entry', 'server'], function (cb) {
+    return nodemon({
+        script: './dist/server/index.js',
+        watch: 'server',
+        tasks: ['server-entry', 'server'],
+        env: {'NODE_ENV': 'development'}
+    })
+})
+
+gulp.task('default', ['client', 'common', 'server', 'server-entry', 'webpack-config', 'nodemon'])
