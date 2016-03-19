@@ -8,6 +8,8 @@ import { Link } from 'react-router'
 import Button from 'fit-button'
 import { Select, Option } from 'fit-select'
 
+import './index.scss'
+
 @connect(
     state => {
         let { home } = state
@@ -43,7 +45,7 @@ class Home extends Component {
         })
 
         return (
-            <div>
+            <div className="_namespace">
                 {Lists}
                 <Button type="primary">按钮</Button>
 

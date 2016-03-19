@@ -24,15 +24,19 @@ if (process.env.NODE_ENV === 'production') {
         module: {
             loaders: [{
                 test: /\.js$/,
-                loader: 'babel',
+                loaders: ['babel', 'html-path-loader'],
                 exclude: /node_modules/
             }, {
                 test: /\.(png|jpg|gif|jpeg)$/,
                 loader: 'url-loader?limit=8192'
-
             }, {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap')
+                test: /\.(scss|css)/,
+                exclude: /node_modules/,
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap', 'autoprefixer-loader', 'sass-loader', 'css-path-loader')
+            }, {
+                test: /\.(scss|css)/,
+                include: /node_modules/,
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap', 'autoprefixer-loader', 'sass-loader')
             }, {
                 test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 loader: 'url?limit=3000&name=font/[hash:8].[name].[ext]'
@@ -72,11 +76,20 @@ if (process.env.NODE_ENV === 'production') {
                     }]]
                 }
             }, {
+                test: /\.js$/,
+                loader: 'html-path-loader',
+                exclude: /node_modules/
+            }, {
                 test: /\.(png|jpg|gif|jpeg)$/,
                 loader: 'url-loader?limit=8192'
             }, {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader'
+                test: /\.(scss|css)/,
+                exclude: /node_modules/,
+                loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader!css-path-loader'
+            }, {
+                test: /\.(scss|css)/,
+                include: /node_modules/,
+                loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
             }, {
                 test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 loader: 'url?limit=3000&name=font/[hash:8].[name].[ext]'
@@ -92,4 +105,4 @@ if (process.env.NODE_ENV === 'production') {
     })
 }
 
-module.exports = webpackConfig;
+module.exports = webpackConfig

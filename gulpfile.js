@@ -5,6 +5,7 @@ var gulpPrefixer = require('./scripts/gulp-plugins/gulp-prefixer')
 
 var ignoreSuffix = `
 require.extensions['.css'] = function (module, filename){}
+require('require-sass')()
 `
 
 gulp.task('client', function () {
