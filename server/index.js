@@ -1,22 +1,25 @@
-require = null
-
 import express from 'express'
+import router from './router'
+import bodyParser from 'body-parser'
 
 import webpack from 'webpack'
 import webpackConfig from '../webpack.config'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 
+import path from 'path'
+
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
-import { RouterContext, match } from 'react-router'
-import { Provider } from 'react-redux'
+import {RouterContext, match} from 'react-router'
+import {Provider} from 'react-redux'
 import createLocation from 'history/lib/createLocation'
-import { fetchComponentDataBeforeRender } from './fetchComponentDataBeforeRender'
+import {fetchComponentDataBeforeRender} from './fetchComponentDataBeforeRender'
 import configureStore from '../common/store'
 import routes from '../common/routes'
 
 const app = express()
+
 const renderFullPage = (html, initialState) => {
     return `
     <!doctype html>
@@ -36,10 +39,16 @@ const renderFullPage = (html, initialState) => {
   `
 }
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({extended: false}))
+
+// parse application/json
+app.use(bodyParser.json())
+
 if (process.env.NODE_ENV !== 'production') {
     const compiler = webpack(webpackConfig)
     app.use(webpackDevMiddleware(compiler, {
-        noInfo: true,
+        noInfo    : true,
         publicPath: webpackConfig.output.publicPath
     }))
     app.use(webpackHotMiddleware(compiler))
@@ -47,20 +56,10 @@ if (process.env.NODE_ENV !== 'production') {
     app.use('/static', express.static(__dirname + '/../../dist'))
 }
 
-app.get('/api/author', function (req, res) {
-    res.send([{
-        author: 1
-    }, {
-        author: 2
-    }, {
-        author: 3
-    }, {
-        author: 4
-    }, {
-        author: 5
-    }])
-})
+// 注册路由
+router(app)
 
+// 后端渲染
 app.get('/*', function (req, res) {
     const location = createLocation(req.url)
 
@@ -96,6 +95,26 @@ app.get('/*', function (req, res) {
         }
     )
 })
+
+// 错误处理
+if (process.env.NODE_ENV !== 'production') {
+    app.use(function (err, req, res, next) {
+        res.status(err.status || 500)
+        res.send({
+            message: err.message,
+            error  : err
+        })
+    })
+} else {
+    app.use(function (err, req, res, next) {
+        res.status(err.status || 500)
+        next(err)
+        res.send({
+            message: err.message,
+            error  : {}
+        })
+    })
+}
 
 const server = app.listen(8080, function () {
     const host = server.address().address

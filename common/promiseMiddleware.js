@@ -1,5 +1,5 @@
 export default store => next => action => {
-    const { promise, type, ...rest } = action
+    const {promise, type, ...rest} = action
 
     if (!promise) return next(action)
 
@@ -16,7 +16,7 @@ export default store => next => action => {
         })
         .catch(error => {
             next({...rest, error, type: FAILURE})
-            console.log(error)
+            console.log('PromiseMiddleware error:', error)
             return false
         })
 }

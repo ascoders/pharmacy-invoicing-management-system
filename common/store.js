@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, compose } from 'redux'
+import {createStore, applyMiddleware, compose} from 'redux'
 import thunk from 'redux-thunk'
 import promiseMiddleware from './promiseMiddleware'
 import rootReducer from './reducer'
@@ -9,16 +9,12 @@ const middlewareBuilder = () => {
     let allComposeElements = []
 
     if (process.browser) {
+        middleware = applyMiddleware(...universalMiddleware)
         if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'test') {
-            middleware = applyMiddleware(...universalMiddleware)
             allComposeElements = [
                 middleware
             ]
         } else {
-            middleware = applyMiddleware(
-                ...universalMiddleware,
-                require('redux-logger')()
-            )
             allComposeElements = [
                 middleware,
                 window.devToolsExtension ? window.devToolsExtension() : f => f

@@ -4,9 +4,9 @@ var merge = require('merge')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 var webpackConfig = {
-    output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js',
+    output : {
+        path      : path.join(__dirname, 'dist'),
+        filename  : 'bundle.js',
         publicPath: '/static/'
     },
     plugins: [
@@ -18,27 +18,28 @@ var webpackConfig = {
 if (process.env.NODE_ENV === 'production') {
     webpackConfig = merge(webpackConfig, {
         devtool: "source-map",
-        entry: [
+        entry  : [
+            'babel-polyfill',
             './client/index.js'
         ],
-        module: {
+        module : {
             loaders: [{
-                test: /\.js$/,
+                test   : /\.js$/,
                 loaders: ['babel', 'html-path-loader'],
                 exclude: /node_modules/
             }, {
-                test: /\.(png|jpg|gif|jpeg)$/,
+                test  : /\.(png|jpg|gif|jpeg)$/,
                 loader: 'url-loader?limit=8192'
             }, {
-                test: /\.(scss|css)/,
+                test   : /\.(scss|css)/,
                 exclude: /node_modules/,
-                loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap', 'autoprefixer-loader', 'sass-loader', 'css-path-loader')
+                loader : ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap', 'autoprefixer-loader', 'sass-loader', 'css-path-loader')
             }, {
-                test: /\.(scss|css)/,
+                test   : /\.(scss|css)/,
                 include: /node_modules/,
-                loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap', 'autoprefixer-loader', 'sass-loader')
+                loader : ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap', 'autoprefixer-loader', 'sass-loader')
             }, {
-                test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                test  : /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 loader: 'url?limit=3000&name=font/[hash:8].[name].[ext]'
             }]
         },
@@ -55,47 +56,48 @@ if (process.env.NODE_ENV === 'production') {
 } else {
     webpackConfig = merge(webpackConfig, {
         devtool: 'inline-source-map',
-        module: {
+        module : {
             loaders: [{
-                test: /\.js$/,
-                loader: 'babel',
+                test   : /\.js$/,
+                loader : 'babel',
                 exclude: /node_modules/,
-                query: {
+                query  : {
                     plugins: [['react-transform', {
                         'transforms': [
                             {
                                 'transform': 'react-transform-hmr',
-                                'imports': ['react'],
-                                'locals': ['module']
+                                'imports'  : ['react'],
+                                'locals'   : ['module']
                             },
                             {
                                 'transform': 'react-transform-catch-errors',
-                                'imports': ['react', 'redbox-react']
+                                'imports'  : ['react', 'redbox-react']
                             }
                         ]
                     }]]
                 }
             }, {
-                test: /\.js$/,
-                loader: 'html-path-loader',
+                test   : /\.js$/,
+                loader : 'html-path-loader',
                 exclude: /node_modules/
             }, {
-                test: /\.(png|jpg|gif|jpeg)$/,
+                test  : /\.(png|jpg|gif|jpeg)$/,
                 loader: 'url-loader?limit=8192'
             }, {
-                test: /\.(scss|css)/,
+                test   : /\.(scss|css)/,
                 exclude: /node_modules/,
-                loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader!css-path-loader'
+                loader : 'style-loader!css-loader!autoprefixer-loader!sass-loader!css-path-loader'
             }, {
-                test: /\.(scss|css)/,
+                test   : /\.(scss|css)/,
                 include: /node_modules/,
-                loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
+                loader : 'style-loader!css-loader!autoprefixer-loader!sass-loader'
             }, {
-                test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                test  : /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 loader: 'url?limit=3000&name=font/[hash:8].[name].[ext]'
             }]
         },
-        entry: [
+        entry  : [
+            'babel-polyfill',
             'webpack-hot-middleware/client',
             './client/index.js'
         ],
