@@ -54,19 +54,21 @@ app.use(session({
     saveUninitialized: true
 }))
 
-if (process.env.NODE_ENV !== 'production') {
-    const compiler = webpack(webpackConfig)
-    app.use(webpackDevMiddleware(compiler, {
-        noInfo    : true,
-        publicPath: webpackConfig.output.publicPath
-    }))
-    app.use(webpackHotMiddleware(compiler))
-} else {
-    app.use('/static', express.static(__dirname + '/../../dist'))
-}
+// if (process.env.NODE_ENV !== 'production') {
+//     const compiler = webpack(webpackConfig)
+//     app.use(webpackDevMiddleware(compiler, {
+//         noInfo    : true,
+//         publicPath: webpackConfig.output.publicPath
+//     }))
+//     app.use(webpackHotMiddleware(compiler))
+// } else {
+    //app.use(express.static(__dirname + '/../dist'))
+//}
 
 // 注册路由
 router(app)
+
+app.use('/static', express.static(__dirname + '/../'))
 
 // 后端渲染
 app.get('/*', function (req, res) {

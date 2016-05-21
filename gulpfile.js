@@ -54,4 +54,6 @@ gulp.task('nodemon', ['server-entry', 'server'], function (cb) {
     })
 })
 
+gulp.task('production', ['server', 'server-entry', 'nodemon'])
+
 gulp.task('default', ['client', 'common', 'common-scss', 'server', 'server-entry', 'webpack-config', 'nodemon'])
