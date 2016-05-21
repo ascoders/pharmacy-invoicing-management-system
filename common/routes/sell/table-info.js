@@ -1,9 +1,6 @@
 export default  {
-    title : '药品库存',
+    title : '销售信息',
     fields: [{
-        key  : 'code',
-        value: '产品编号'
-    }, {
         key  : 'name',
         value: '药品名称'
     }, {
@@ -13,29 +10,17 @@ export default  {
         key  : 'number',
         value: '数量'
     }, {
-        key  : 'create',
-        value: '生产日期'
-    }, {
-        key  : 'effectiveTime',
-        value: '有效期'
-    }, {
-        key  : 'purchasePrice',
-        value: '进价'
-    }, {
         key  : 'price',
         value: '售价'
     }, {
-        key  : 'supplier',
-        value: '供应商'
+        key  : 'sellDate',
+        value: '销售日期'
     }, {
-        key  : 'member',
-        value: '采购员'
-    }, {
-        key  : 'factory',
-        value: '仓库'
+        key  : 'sellMember',
+        value: '销售员'
     }],
     get   : {
-        url       : '/api/drugs',
+        url       : '/api/sells',
         method    : 'get',
         beforeSend: (info, currentPage, response)=> {
             info.page = currentPage

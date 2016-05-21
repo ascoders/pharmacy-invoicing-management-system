@@ -1,15 +1,15 @@
-import {drug} from '../index'
+import {sell} from '../index'
 
 export const findOne = async()=> {
-    return await drug.findOne()
+    return await sell.findOne()
 }
 
 export const create = async(info)=> {
-    return await drug.create(info)
+    return await sell.create(info)
 }
 
 export const update = async(info, id)=> {
-    return await drug.update(info, {
+    return await sell.update(info, {
         where: {
             id: id
         }
@@ -17,7 +17,7 @@ export const update = async(info, id)=> {
 }
 
 export const del = async(id)=> {
-    return await drug.destroy({
+    return await sell.destroy({
         where: {
             id: id
         }
@@ -25,5 +25,5 @@ export const del = async(id)=> {
 }
 
 export const findAndCountAll = async(info)=> {
-    return await drug.findAndCountAll(info)
+    return await sell.findAndCountAll(info)
 }

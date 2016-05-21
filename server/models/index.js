@@ -1,5 +1,7 @@
 import Sequelize from 'sequelize'
 import drugSchema from './drug/schema'
+import memberSchema from './member/schema'
+import sellSchema from './sell/schema'
 
 const sequelize = new Sequelize('pharmacy', 'root', '', {
     host   : 'localhost',
@@ -12,5 +14,7 @@ const sequelize = new Sequelize('pharmacy', 'root', '', {
 })
 
 export const drug = sequelize.define(...drugSchema)
+export const member = sequelize.define(...memberSchema)
+export const sell = sequelize.define(...sellSchema)
 
 sequelize.sync()

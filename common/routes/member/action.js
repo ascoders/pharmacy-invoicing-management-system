@@ -25,7 +25,7 @@ export const addDrug = (addData)=> {
     return {
         type   : ADD_DRUG,
         promise: request.post(
-            isomorphicRequestUrl('/api/drug'),
+            isomorphicRequestUrl('/api/member'),
             addData
         )
     }

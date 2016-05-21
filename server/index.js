@@ -7,6 +7,8 @@ import webpackConfig from '../webpack.config'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 
+import session from 'express-session'
+
 import path from 'path'
 
 import React from 'react'
@@ -45,6 +47,13 @@ app.use(bodyParser.urlencoded({extended: false}))
 // parse application/json
 app.use(bodyParser.json())
 
+app.use(session({
+    secret           : 'hiuo4i2ntjger0gu8u',
+    cookie           : {maxAge: 80000},  //设置maxAge是80000ms，即80s后session和相应的cookie失效过期
+    resave           : false,
+    saveUninitialized: true
+}))
+
 if (process.env.NODE_ENV !== 'production') {
     const compiler = webpack(webpackConfig)
     app.use(webpackDevMiddleware(compiler, {
@@ -82,16 +91,14 @@ app.get('/*', function (req, res) {
             )
 
             // This method waits for all render component promises to resolve before returning to browser
-            fetchComponentDataBeforeRender(store.dispatch, renderProps.components, renderProps.params)
-                .then(html => {
-                    const componentHTML = ReactDOMServer.renderToString(InitialView)
-                    const initialState = store.getState()
-                    res.status(200).end(renderFullPage(componentHTML, initialState))
-                })
-                .catch(err => {
-                    console.log(err)
-                    res.end(renderFullPage('', {}))
-                })
+            fetchComponentDataBeforeRender(store.dispatch, renderProps.components, renderProps.params).then(html => {
+                const componentHTML = ReactDOMServer.renderToString(InitialView)
+                const initialState = store.getState()
+                res.status(200).end(renderFullPage(componentHTML, initialState))
+            }).catch(err => {
+                console.log(err)
+                res.end(renderFullPage('', {}))
+            })
         }
     )
 })

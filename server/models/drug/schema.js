@@ -39,5 +39,30 @@ export default ['drug', {
     effectiveTime: {
         type   : Sequelize.INTEGER,
         comment: '有效时间(天)'
+    },
+
+    member: {
+        type   : Sequelize.STRING,
+        comment: '采购员'
+    },
+
+    factory: {
+        type   : Sequelize.STRING,
+        comment: '仓库'
+    },
+
+    code: {
+        type   : Sequelize.STRING,
+        comment: '产品编号'
+    },
+
+    number: {
+        type   : Sequelize.INTEGER,
+        comment: '数量'
+    },
+
+    supplier: {
+        type   : Sequelize.STRING,
+        comment: '供应商'
     }
 }]

@@ -1,28 +1,20 @@
-import * as drug from '../../models/drug'
+import * as member from '../../models/member'
 
 export const findOne = async(req, res)=> {
-    const info = await drug.findOne()
+    const info = await member.findOne()
     res.send(info)
 }
 
 export const findAll = async(req, res)=> {
-    let sql = {
+    const info = await member.findAndCountAll({
         offset: (req.query.page - 1) * 10,
         limit : 10
-    }
-
-    if (req.query.name) {
-        sql.where = {
-            name: req.query.name
-        }
-    }
-
-    const info = await drug.findAndCountAll(sql)
+    })
     res.send(info)
 }
 
 export const create = async(req, res)=> {
-    const info = await drug.create(req.body)
+    const info = await member.create(req.body)
     res.send(info)
 }
 
@@ -31,12 +23,12 @@ export const update = async(req, res)=> {
     const updateInfo = {
         [req.body.key]: req.body.value
     }
-    const info = await drug.update(updateInfo, id)
+    const info = await member.update(updateInfo, id)
     res.send(info)
 }
 
 export const del = async(req, res)=> {
     const id = req.body.id
-    const info = await drug.del(id)
+    const info = await member.del(id)
     res.status(200).send(true)
 }

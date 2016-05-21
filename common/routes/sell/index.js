@@ -16,12 +16,12 @@ import Button from 'fit-button'
     state => ({
         state: state.add
     }),
-    dispatch => (
-        bindActionCreators(actions, dispatch)
-    )
+    dispatch => ({
+        ...bindActionCreators(actions, dispatch)
+    })
 )
 @immutableRenderDecorator
-export default class Counter extends Component {
+class Sell extends Component {
     constructor(props) {
         super(props)
     }
@@ -38,12 +38,8 @@ export default class Counter extends Component {
                 <div className="fields">
                     <Row>
                         <Col span="6">
-                            <Input onChange={this.handleAddDataChange.bind(this,'code')}
-                                   label="产品编号"/>
-                        </Col>
-                        <Col span="6">
                             <Input onChange={this.handleAddDataChange.bind(this,'name')}
-                                   label="药品名称"/>
+                                   label="药品名"/>
                         </Col>
                         <Col span="6">
                             <Input onChange={this.handleAddDataChange.bind(this,'standard')}
@@ -59,37 +55,16 @@ export default class Counter extends Component {
                 <div className="fields">
                     <Row>
                         <Col span="6">
-                            <Input onChange={this.handleAddDataChange.bind(this,'create')}
-                                   label="生产日期"/>
+                            <Input onChange={this.handleAddDataChange.bind(this,'price')}
+                                   label="售价"/>
                         </Col>
                         <Col span="6">
-                            <Input onChange={this.handleAddDataChange.bind(this,'effectiveTime')}
-                                   label="有效期"/>
+                            <Input onChange={this.handleAddDataChange.bind(this,'sellDate')}
+                                   label="销售日期"/>
                         </Col>
                         <Col span="6">
-                            <Number onChange={this.handleAddDataChange.bind(this,'purchasePrice')}
-                                    label="进价"/>
-                        </Col>
-                        <Col span="6">
-                            <Number onChange={this.handleAddDataChange.bind(this,'price')}
-                                    label="售价"/>
-                        </Col>
-                    </Row>
-                </div>
-
-                <div className="fields">
-                    <Row>
-                        <Col span="6">
-                            <Input onChange={this.handleAddDataChange.bind(this,'supplier')}
-                                   label="供应商"/>
-                        </Col>
-                        <Col span="6">
-                            <Input onChange={this.handleAddDataChange.bind(this,'member')}
-                                   label="采购员"/>
-                        </Col>
-                        <Col span="6">
-                            <Input onChange={this.handleAddDataChange.bind(this,'factory')}
-                                   label="仓库"/>
+                            <Input onChange={this.handleAddDataChange.bind(this,'sellMember')}
+                                   label="销售员"/>
                         </Col>
                     </Row>
                 </div>
@@ -104,3 +79,5 @@ export default class Counter extends Component {
         )
     }
 }
+
+export default Sell
